@@ -1,5 +1,7 @@
 -- SQL script that creates a trigger that resets the
 -- attribute valid_email only when the email has been changed.
+DROP TRIGGER IF EXISTS validate_email;
+DELIMITER //
 CREATE TRIGGER validate_email
 BEFORE UPDATE ON users
 FOR EACH ROW
@@ -9,4 +11,5 @@ BEGIN
     ELSE
         SET NEW.valid_email = NEW.valid_email;
     END IF;
-END
+END //
+DELIMITER ;
