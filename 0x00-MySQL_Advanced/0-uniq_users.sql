@@ -1,7 +1,7 @@
---- script that creates a table with unique users 
+-- Task : 0. We are all unique! - creates a table users
 -- script can be executed on any database
-CREATE TABLE IF NOT EXISTS `users` (
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE If NOT EXISTS `users` (  
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `email` VARCHAR(255) NOT NULL UNIQUE,
     `name` VARCHAR(255)
 );
